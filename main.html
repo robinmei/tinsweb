@@ -1,0 +1,20 @@
+memform
+
+<p>Let's just build this in html, dudes</p>
+
+<div style="width:500px;height:60px;border:5px solid blue; text size="6"; text-align:center;"><br>You are becoming a <b>NEW MEMBER</b> of the Tahoe Institute for Natural Science</div>
+<p>Note: Pressing Enter or Return may submit the form prematurely. Please use the tab key or your mouse to advance the cursor</p>
+<form name="form" onsubmit="CheckForm()">Please select a membership level
+    <select name="myOptions" onchange="document.form.showValue.value=this.value">
+        <option value="">Select a link</option>
+        <option value="$20">Student ($20)</option>
+        <option value="$35" selected>Regular ($35)</option>
+        <option value="$60">Family ($60)</option>
+        <option value="$100">Supporting ($100)</option>
+        <option value="$250">Sustaining ($250)</option>
+        <option value="$500">Patron ($500)</option>
+        <option value="$1000">Benefactor ($1000+)</option>
+        <option value="">Other</option>
+    </select>
+    Amount:<t><input type="text" name="showValue">
+</form>
