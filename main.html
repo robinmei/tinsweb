@@ -1,29 +1,139 @@
+<script>  
+function giftme(){  
+var s = document.giftform.gift1;  
+var h = document.giftform.giftinfo;  
+if( s.checked ) {  
+h.style.visibility="visible";  
+}else{  
+h.style.visibility="hidden";  
+}  
+}  
+</script> 
+
 memform
 
 <p>Let's just build this in html, dudes</p>
-<form name="mem" onsubmit="CheckForm()">
     
-<div style="width:500px;height:60px;border:5px solid blue; text size="6"; text-align:center;"><br>You are becoming a <b>NEW MEMBER</b> of the Tahoe Institute for Natural Science</div>
+    <div style="width:600px;height:60px;border:5px solid blue;color:black" align="center";><br>You are becoming a <b>NEW MEMBER</b> of the Tahoe Institute for Natural Science</div>
     
-<p>Note: Pressing Enter or Return may submit the form prematurely. Please use the tab key or your mouse to advance the cursor</p>
-
+<p>Note: Pressing Enter or Return may submit the form prematurely. Please use the tab key or your mouse to advance the cursor. Thanks!
+    
+    
 <table>
-        <tr><td>Please select a membership level</td>    
-                <td><select name="level" onchange="document.form.showValue.value=this.value">
+    <tr>
+        <td> Please select a membership level:<br></td>
+        <td valign='center'><form name="form" onsubmit="CheckForm()"><br>
+            <select name="level" onchange="document.form.showValue.value=this.value">
                 <option value="$20">Student ($20)</option>
-                <option value="$35" selected>Regular ($35)</option>
+                <option value="$35" selected="">Regular ($35)</option>
                 <option value="$60">Family ($60)</option>
                 <option value="$100">Supporting ($100)</option>
                 <option value="$250">Sustaining ($250)</option>
                 <option value="$500">Patron ($500)</option>
-                <option value="$1000">Benefactor ($1000+)</option>
-                <option value="">Other</option>
-                </select>
-        </td></tr>
-        <tr><td>Amount:</td>
-         <td><input type='text' name='showValue'>
-          </td></tr>
+                <option value=" Enter Amount">Benefactor ($1000+)</option>
+                <option value=" Enter Amount">Other</option>
+            </select><input type="text" name="showValue" width='20' placeholder='Amount' style='width:95px'></form></td>
+    </tr>
+    <tr>
+        <td>Free TINS shopping tote?</td>
+        <td><select name='tote'>
+            <option value='y' selected>Yes</option>
+            <option value='n'>No</option></select></td>
+    </tr>
+    <tr>
+        <td>How would you like to receive <br>our Tanager newsletter?</td>
+        <td><select name='newsletter'>
+            <option value='print' selected>Mailed hard copy</option>
+            <option value='email'>Emailed PDF</option></select></td>
+    </tr>       
+    <tr>
+        <td>First Name*</td>
+        <td><input type='text' name='firstname' required></td>
+    </tr>   
+    <tr>
+        <td>Last Name*</td>
+        <td><input type='text'  name='lastname' required></td>
+    </tr>  
+    <tr>
+        <td>Address*</td>
+        <td><input type='text'  name='address' required></td>
+    </tr>   
+    <tr>
+        <td>City, State*</td>
+        <td><input type='text'  name='citystate' required><select name="state">
+            <option value='choose' disabled selected>Select your state</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV" >Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+            </select></td>
+    </tr>   
+    <tr>
+        <td>Zip*</td>
+        <td><input type='text'  name='zip' required></td>
+    </tr>   
+    <tr>
+        <td>Email*</td>
+        <td><input type='text'  name='email' required></td>
+    </tr>   
+<form name="giftform">     
+    <tr><td>Is this a gift membership? <input type='checkbox' name ="gift1" onchange="giftme()"><br>(Check the box to enter more details)</td>
+        <td>
+<input type ="textbox" name="giftinfo" style=" position:relative;visibility:hidden;" value="hello">  
+        </td></tr></form>  
+
+
+
+
 </table>
-    
-    
-</form>
+ 
+
+
+
